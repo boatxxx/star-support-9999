@@ -75,6 +75,7 @@ public function update(Request $request, $id)
     $user->email = $request->input('email');
     $user->role_id = $request->input('role_id');
     $user->status = $request->input('status');
+    $user->user_id = $request->input('user_id');
 
     // Check if a new image file is uploaded
     if ($request->hasFile('img_user')) {

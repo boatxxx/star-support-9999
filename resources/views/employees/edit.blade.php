@@ -93,15 +93,7 @@
             <div class="form-group">
                 <label for="img_user">รูปโปรไฟล์</label>
                 <input type="file" name="img_user" class="form-control">
-                @if($employee->img_user)
-                    <img src="{{ asset('storage/' . $employee->img_user) }}" alt="Profile Image" style="width: 100px; height: 100px;">
-                @else
-                    <img src="{{ asset('images/default-avatar.png') }}" alt="Default Avatar" style="width: 100px; height: 100px;">
-                @endif
-                @error('img_user')
-                    <div class="error">{{ $message }}</div>
-                @enderror
-            </div>
+
 
 
             <div class="form-group">

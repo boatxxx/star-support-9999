@@ -108,6 +108,18 @@
                       </a>
                     </li>
                     <li>
+                        <li>
+                            <a href="sidebar-style-2.html">
+                              <span class="sub-item">ประวัติการเคลื่อนย้ายสินค้า</span>
+                            </a>
+                          </li>
+                          <li>
+                            <li>
+                                <a href="sidebar-style-2.html">
+                                  <span class="sub-item">ประวัติการจองสินค้า</span>
+                                </a>
+                              </li>
+                              <li>
                       <a href="icon-menu.html">
                         <span class="sub-item">ประวัติการขายสินค้า</span>
                       </a>
@@ -207,6 +219,20 @@
               <li class="nav-item">
                 <a href="widgets.html">
                   <i class="fas fa-desktop"></i>
+                  <p>โปรโมชั่น</p>
+                  <span class="badge badge-success">4</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="widgets.html">
+                  <i class="fas fa-desktop"></i>
+                  <p>ยอดขาย</p>
+                  <span class="badge badge-success">4</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="widgets.html">
+                  <i class="fas fa-desktop"></i>
                   <p>ระบบแจ้งเตือนไลน์</p>
                   <span class="badge badge-success">4</span>
                 </a>
@@ -215,6 +241,13 @@
                 <a href="../../documentation/index.html">
                   <i class="fas fa-file"></i>
                   <p>เอกสารรายงาน</p>
+                  <span class="badge badge-secondary">1</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../../documentation/index.html">
+                  <i class="fas fa-file"></i>
+                  <p>การคืนสินค้า</p>
                   <span class="badge badge-secondary">1</span>
                 </a>
               </li>

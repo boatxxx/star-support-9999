@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('total_price', 8, 2);
             $table->date('sale_date');
             $table->timestamps();
+            $table->unsignedBigInteger('promotion_id');
 
 
         });

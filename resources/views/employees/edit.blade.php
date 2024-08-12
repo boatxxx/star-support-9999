@@ -75,6 +75,10 @@
                 <input type="text" id="user_id" name="user_id" value="{{ old('name', $employee->user_id) }}" required>
             </div>
             <div class="form-group">
+                <label for="password">รหัสพนักงาน</label>
+                <input type="text" id="password" name="password" value="{{ old('name', $employee->password) }}" required>
+            </div>
+            <div class="form-group">
                 <label for="status">สถานะ</label>
                 <select id="status" name="status" required>
                     <option value="ออนไลน์" {{ $employee->status == 'ออนไลน์' ? 'selected' : '' }}>ออนไลน์</option>

@@ -39,11 +39,12 @@
                             <div class="col text-end">
                                 <a href="{{ route('users.show', $employee->user_id) }}" class="btn btn-info">ดูข้อมูล</a>
                                 <a href="{{ route('users.edit', $employee->user_id) }}" class="btn btn-warning">แก้ไข</a>
-                                <form action="{{ route('users.create', $employee->id) }}" method="POST" style="display:inline;">
+                                <form action="{{ route('users.destroy', $employee->user_id) }}}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">ลบ</button>
                                 </form>
+
                             </div>
                         </div>
                     </div>

@@ -74,6 +74,13 @@
                 <h4 class="text-section">Components</h4>
               </li>
               <li class="nav-item">
+                <a href="{{ route('work_records.create') }}">
+                  <i class="fas fa-file"></i>
+                  <p>การจัดตารางออเดอร์</p>
+                  <span class="badge badge-secondary"></span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#base">
                   <i class="fas fa-layer-group" ></i>
                   <p>จัดการข้อมูลพนักงาน</p>
@@ -94,6 +101,7 @@
 
                 </div>
               </li>
+
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#sidebarLayouts">
                   <i class="fas fa-th-list"></i>
@@ -103,10 +111,15 @@
                 <div class="collapse" id="sidebarLayouts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="sidebar-style-2.html">
+                      <a href="{{ route('products.index') }}">
                         <span class="sub-item">สินค้าทั้งหมด</span>
                       </a>
                     </li>
+                    <li>
+                        <a href="{{ route('warehouses.index') }}">
+                          <span class="sub-item">โกดัง</span>
+                        </a>
+                      </li>
                     <li>
                         <li>
                             <a href="sidebar-style-2.html">
@@ -152,6 +165,7 @@
                       </li>
                     </ul>
                   </div>
+
               </li>
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#tables">
@@ -204,20 +218,16 @@
                 <div class="collapse" id="charts">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="charts/charts.html">
+                      <a href="{{ route('shops.index') }}">
                         <span class="sub-item">ร้านค้าทั้งหมด</span>
                       </a>
                     </li>
-                    <li>
-                      <a href="charts/sparkline.html">
-                        <span class="sub-item">บันทึกร้านค้าและแก้ไขข้อมูล</span>
-                      </a>
-                    </li>
+
                   </ul>
                 </div>
               </li>
               <li class="nav-item">
-                <a href="widgets.html">
+                <a href="{{ route('promotions.index') }}">
                   <i class="fas fa-desktop"></i>
                   <p>โปรโมชั่น</p>
                   <span class="badge badge-success">4</span>
@@ -273,6 +283,8 @@
                       </a>
 
                     </li>
+
+
                     <li>
                         <a data-bs-toggle="collapse" href="#subnav2">
                           <span class="sub-item">ข้อมูลติดต่อผู้สร้าง</span>
@@ -285,6 +297,10 @@
               </li>
             </ul>
           </div>
+          <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" class="btn btn-danger">ล็อกเอ้าท์</button>
+        </form>
         </div>
       </div>
       <!-- End Sidebar -->
@@ -655,24 +671,25 @@
             <ul class="nav">
               <li class="nav-item">
                 <a class="nav-link" href="http://www.themekita.com">
-                  ThemeKita
+                  พัณธมิตร
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Help </a>
+                <a class="nav-link" href="#"> ช่วยเหลือ </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"> Licenses </a>
+                <a class="nav-link" href="#"> การพัฒนา </a>
               </li>
             </ul>
           </nav>
           <div class="copyright">
             2024, made with <i class="fa fa-heart heart text-danger"></i> by
-            <a href="http://www.themekita.com">ThemeKita</a>
+            <a href="http://www.themekita.com"> บริษัท สตาร์ซัพพอร์ต 999 (ประเทศไทย) จํากัด</a>
           </div>
           <div>
-            Distributed by
-            <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
+       เจ้าของลิขสิทธิ์
+            <a target="_blank" href=" บริษัท สตาร์ซัพพอร์ต 999 (ประเทศไทย) จํากัด
+"></a>.
           </div>
         </div>
       </footer>

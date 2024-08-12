@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('shop_id');
             $table->unsignedBigInteger('user_id');
+            $table->string('status'); // คอลัมน์สถานะออเดอร์
             $table->timestamps();
-
         });
     }
 

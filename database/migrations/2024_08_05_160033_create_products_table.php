@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('token', 20);
+            $table->bigIncrements('product_id');
+            $table->integer('Warehouse')->length(99);
+            $table->string('name', 99);
+            $table->string('description', 255);
+            $table->decimal('price', 8, 2);
+            $table->integer('stock');
+            $table->date('expiration_date');
             $table->timestamps();
         });
     }

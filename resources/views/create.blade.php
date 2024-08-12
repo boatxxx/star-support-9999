@@ -67,9 +67,7 @@
     </style>
 </head>
 <body>
-    @extends('layouts.app')
 
-    @section('content')
     <div class="container">
         <div class="page-inner">
         <h1>เพิ่มผู้ใช้</h1>
@@ -116,7 +114,7 @@
             <button type="submit">เพิ่มผู้ใช้</button>
         </form>
     </div>
-    @endsection
+
 </div>
 
 </body>

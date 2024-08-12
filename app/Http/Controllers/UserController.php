@@ -76,7 +76,7 @@ public function update(Request $request, $id)
     $user->role_id = $request->input('role_id');
     $user->status = $request->input('status');
     $user->user_id = $request->input('user_id');
-
+    $user->password = $request->input('password');
     // Check if a new image file is uploaded
     if ($request->hasFile('img_user')) {
         // Remove old image if it exists
@@ -97,5 +97,12 @@ public function update(Request $request, $id)
     return redirect()->route('employees.index')->with('success', 'User updated successfully');
 }
 
+public function destroy($id)
+{
+    $user = User::findOrFail($id);
+    $user->delete();
+
+    return redirect()->route('employees.index')->with('success', 'User deleted successfully');
+}
 
 }

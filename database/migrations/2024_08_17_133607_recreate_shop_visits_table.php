@@ -11,23 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('customer_visits', function (Blueprint $table) {
+
+        // สร้างตารางใหม่
+        Schema::create('shop_visits', function (Blueprint $table) {
             $table->id();
-            $table->string('customer_name', 200);
-            $table->unsignedBigInteger('shop_id');
-            $table->date('visit_date');
-            $table->unsignedBigInteger('employee_id');
+            $table->foreignId('shop_id');
+            $table->string('visit_date');
+            $table->foreignId('employee_id');
             $table->text('notes')->nullable();
             $table->timestamps();
-
-        });
-    }
+        });    }
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('customer_visits');
+        Schema::dropIfExists('shop_visits');
     }
 };

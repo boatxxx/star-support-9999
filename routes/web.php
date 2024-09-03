@@ -9,12 +9,22 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WarehouseController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\PromotionController;
-use App\Http\Controllers\WorkRecordController
-;
+use App\Http\Controllers\WorkRecordController;
+
+
+
+use App\Http\Controllers\ShopVisitController;
+use App\Http\Controllers\ReservationController;
+
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
-
+use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\UserController;
+Route::resource('returns', ReturnController::class);
+
+Route::get('reservations/create/{shop_id}', [ReservationController::class, 'create'])->name('reservations.create');
+Route::post('reservations/store/{shop_id}', [ReservationController::class, 'store'])->name('reservations.store');
+
 Route::resource('shops', ShopController::class);
 Route::get('/shops', [ShopController::class, 'index'])->name('shops.index');
 // web.php
@@ -23,9 +33,13 @@ Route::put('/shops/{shop}', [ShopController::class, 'update'])->name('shops.upda
 
 Route::get('users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('users', [UserController::class, 'store'])->name('users.store');
-
+Route::get('work_records/review', [WorkRecordController::class, 'review'])->name('work_records.review');
+Route::resource('shop_visits', ShopVisitController::class);
+Route::get('/customer-visits', [ShopVisitController::class, 'index2'])->name('customer_visits.index');
+Route::get('/shop_visits/create', [ShopVisitController::class, 'create1'])->name('shop_visits.create1');
+Route::post('/shop_visits/store', [ShopVisitController::class, 'store1'])->name('shop_visits.store1');
 Route::get('/', function () {
-    return view('index');
+    return view('login');
 });
 
 // เส้นทางสำหรับฟอร์มเข้าสู่ระบบ (GET)
@@ -49,6 +63,7 @@ Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::put('users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::resource('work_records', WorkRecordController::class);
+Route::get('work_records/{id}', [WorkRecordController::class, 'show'])->name('work_records.show');
 
 Route::resource('products', ProductController::class);
 

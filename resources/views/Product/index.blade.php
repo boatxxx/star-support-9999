@@ -146,12 +146,18 @@
                         <td>{{ $product->expiration_date }}</td>
                         <td>
                             <a href="{{ route('products.show', $product->product_id) }}" class="btn">ดูรายละเอียด</a>
-                            <!-- คุณสามารถเพิ่มลิงก์สำหรับการแก้ไขและลบที่นี่ -->
+                            <a href="{{ route('products.edit', $product->product_id) }}" class="btn btn-primary">แก้ไข</a>
+                            <form action="{{ route('products.destroy', $product->product_id) }}" method="POST" style="display:inline-block;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('คุณแน่ใจหรือไม่ว่าต้องการลบสินค้านี้?')">ลบ</button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
+
     </div>
     @endsection
 </body>

@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('work_records', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
-            $table->bigInteger('quantity');
+
             $table->date('order_date');
             $table->text('description')->nullable();
             $table->unsignedBigInteger('shop_id');

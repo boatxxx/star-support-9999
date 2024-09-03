@@ -74,7 +74,7 @@
                 <h4 class="text-section">Components</h4>
               </li>
               <li class="nav-item">
-                <a href="{{ route('work_records.create') }}">
+                <a href="{{ route('work_records.index') }}">
                   <i class="fas fa-file"></i>
                   <p>การจัดตารางออเดอร์</p>
                   <span class="badge badge-secondary"></span>
@@ -128,6 +128,12 @@
                           </li>
                           <li>
                             <li>
+                                <a href="{{ route('returns.index') }}">
+                                  <span class="sub-item">ประวัติการคืนสินค้า</span>
+                                </a>
+                              </li>
+                              <li>
+                            <li>
                                 <a href="sidebar-style-2.html">
                                   <span class="sub-item">ประวัติการจองสินค้า</span>
                                 </a>
@@ -150,12 +156,21 @@
                 <div class="collapse" id="forms">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="forms/forms.html">
-                        <span class="sub-item">ประวัติการเยื่ยมลูกค้า</span>
+                      <a href="{{ route('shop_visits.index') }}">
+                        <span class="sub-item">จัดตารางเยื่ยมร้านค้า</span>
                       </a>
                     </li>
                   </ul>
                 </div>
+                <div class="collapse" id="forms">
+                    <ul class="nav nav-collapse">
+                      <li>
+                        <a href="forms/forms.html">
+                          <span class="sub-item">ประวัติการเยื่ยมลูกค้า</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 <div class="collapse" id="forms">
                     <ul class="nav nav-collapse">
                       <li>

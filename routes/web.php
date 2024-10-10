@@ -11,15 +11,28 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\WorkRecordController;
 
+use App\Http\Controllers\QuotationController;
 
 
 use App\Http\Controllers\ShopVisitController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\SalesController;
 
 
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductLoadingController;
+use App\Http\Controllers\ProductReservationController;
+
+// เส้นทางสำหรับสินค้าขึ้นรถ
+Route::get('/product-loading/create/{workRecord}', [ProductLoadingController::class, 'create'])->name('product_loading.create');
+Route::post('/product-loading/store', [ProductLoadingController::class, 'store'])->name('product_loading.store');
+
+// เส้นทางสำหรับจองสินค้า
+Route::get('/product-reservation/create', [ProductReservationController::class, 'create'])->name('product_reservation.create');
+Route::post('/product-reservation/store', [ProductReservationController::class, 'store'])->name('product_reservation.store');
+
 Route::resource('returns', ReturnController::class);
 
 Route::get('reservations/create/{shop_id}', [ReservationController::class, 'create'])->name('reservations.create');
@@ -41,9 +54,20 @@ Route::post('/shop_visits/store', [ShopVisitController::class, 'store1'])->name(
 Route::get('/', function () {
     return view('login');
 });
+Route::post('/sales/store', [SalesController::class, 'store'])->name('sales.store');
 
 // เส้นทางสำหรับฟอร์มเข้าสู่ระบบ (GET)
-Route::post('/login', [App\Http\Controllers\LoginControllers::class, 'store'])->name('login');
+// แสดงฟอร์มเข้าสู่ระบบ (GET)
+Route::get('/login', [App\Http\Controllers\LoginControllers::class, 'show'])->name('login');
+
+// ส่งข้อมูลเข้าสู่ระบบ (POST)
+Route::post('/login', [App\Http\Controllers\LoginControllers::class, 'store'])->name('login.store');
+
+// แสดงหน้าใบเสนอราคาจากออเดอร์ที่เลือก (GET)
+Route::get('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'show'])->name('quotation.show');
+
+// ส่งข้อมูลที่ผู้ใช้กรอก (POST)
+Route::post('/quotation/{id}', [App\Http\Controllers\QuotationController::class, 'store'])->name('quotation.store');
 
 // เส้นทางสำหรับการเข้าสู่ระบบ (POST)
 

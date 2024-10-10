@@ -25,5 +25,8 @@ class Product extends Model
         'expiration_date',
     ];
 
+    public function sales() {
+        return $this->hasMany(Sale::class, 'product_id', 'id'); // เปลี่ยน `Sale` เป็นโมเดลที่คุณใช้
+    }
     // กำหนดรูปแบบวันที่ของ attribute
     protected $dates = ['expiration_date'];   }
